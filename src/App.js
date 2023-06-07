@@ -3,23 +3,16 @@ import React from "react";
 
 function App() {
 
-const [data, setData] = useState ({
-    artist: "",
-    song: "",
-    album: "",
-});
+const [data, setData] = useState ({});
 
 useEffect(() => {
-  fetch(data).then((res) =>
+  fetch("/data").then((res) =>
   res.json().then((data) => {
-    setData({
-      artist: ,
-      song: ,
-      album: ,
-    });
-  });
-  );
-}, []);
+    setData({data});
+    console.log(data)
+  })
+ );
+}, [data])
 
   return (
     <div>
